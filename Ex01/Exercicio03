@@ -1,0 +1,48 @@
+//Exercicio 3
+//Tanto a sobrecarga quanto a sobreposição (ou sobrescrita) são conceitos importantes na programação orientada a objetos (POO) em C#, permitindo a reutilização e especialização de métodos. No entanto, elas se diferenciam em seus objetivos e na forma como são implementadas.
+
+//Sobrecarga (Overloading)
+//A sobrecarga permite que você defina vários métodos com o mesmo nome na mesma classe, desde que seus parâmetros sejam diferentes. Isso significa que os métodos podem receber um número diferente de parâmetros, tipos de parâmetros diferentes ou ambos.
+
+//Exemplo:
+//class Matematica
+{
+    public int Somar(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Somar(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+//Neste exemplo, a classe Matematica possui dois métodos Somar(), cada um com parâmetros e tipo de retorno diferentes. Isso permite que você chame o método Somar() com números inteiros ou números de ponto flutuante, obtendo o resultado correto em cada caso.
+
+//Sobreposição (Override)
+//A sobreposição, também conhecida como sobrescrita, permite que você redefina um método herdado de uma classe base em uma classe derivada. Isso significa que a classe derivada fornece sua própria implementação para o método, substituindo a implementação da classe base.
+
+//Exemplo:
+class Animal
+{
+    public virtual void FazerSom()
+    {
+        Console.WriteLine("Som genérico de animal");
+    }
+}
+
+class Cachorro : Animal
+{
+    public override void FazerSom()
+    {
+        Console.WriteLine("Auuuuuu!");
+    }
+}
+
+//Neste exemplo, a classe Animal possui um método virtual FazerSom(). A classe Cachorro, que herda de Animal,
+// redefine o método FazerSom() para imprimir "Auuuuuu!" quando chamado.
+
+//Quando Utilizar Cada Uma:
+//Sobrecarga: Utilize quando precisa de métodos com o mesmo nome, mas para diferentes tipos de dados ou número de argumentos.
+//Sobreposição: Utilize quando precisa especializar o comportamento de um método herdado para se adequar às necessidades da classe derivada.

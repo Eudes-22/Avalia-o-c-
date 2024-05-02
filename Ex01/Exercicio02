@@ -1,0 +1,49 @@
+Exercicio 2
+//Interfaces em Orientação a Objetos e sua Implementação em C#
+//Em programação orientada a objetos (POO), interfaces definem um conjunto de métodos, propriedades e eventos que classes ou structs devem implementar. Elas servem como contratos que especificam o comportamento esperado de um objeto, sem definir como essa implementação deve ser realizada. As interfaces promovem abstratização, flexibilidade e reutilização de código, sendo ferramentas essenciais na construção de sistemas robustos e extensíveis.
+
+//Características das Interfaces:
+//Definem o "o que" e não o "como": Interfaces definem a API (Application Programming Interface) de um objeto, mas não sua implementação.
+//Promovem polimorfismo: Permitem que objetos de diferentes classes respondam a métodos de forma similar, mesmo com implementações distintas.
+//Facilitam a interoperabilidade: Permitem que diferentes classes interajam entre si, mesmo que não sejam da mesma hierarquia de herança.
+//Auxiliam no desacoplamento: Reduzem a dependência entre classes, tornando o código mais modular e flexível.
+//Implementação em C#:
+//A palavra-chave interface é utilizada para declarar uma interface em C#:
+//Exemplo:
+interface IFormaPagamento
+{
+    void ProcessarPagamento(double valor);
+    bool ConfirmarPagamento();
+}
+
+Uma classe ou struct pode implementar uma interface utilizando a palavra-chave implements:
+
+class CartaoCredito : IFormaPagamento
+{
+    public void ProcessarPagamento(double valor)
+    {
+        // Implementação específica para pagamento com cartão de crédito
+    }
+
+    public bool ConfirmarPagamento()
+    {
+        // Implementação específica para confirmação de pagamento com cartão de crédito
+    }
+}
+
+//Exemplo Prático: Sistema de Pagamento Online
+//Em um sistema de pagamento online, interfaces podem ser utilizadas para garantir a interoperabilidade entre diferentes formas de pagamento, como cartão de crédito, boleto bancário e PIX.
+
+//Interface IFormaPagamento: Define os métodos ProcessarPagamento() e ConfirmarPagamento(), que todas as formas de pagamento devem implementar.
+//Classes Concretas:
+//CartaoCredito: Implementa os métodos da interface IFormaPagamento para processar pagamentos com cartão de crédito.
+//BoletoBancario: Implementa os métodos da interface IFormaPagamento para processar pagamentos com boleto bancário.
+//PIX: Implementa os métodos da interface IFormaPagamento para processar pagamentos via PIX.
+//Ao utilizar interfaces, o código se torna mais modular e flexível, permitindo a fácil adição de novas formas de pagamento no futuro sem a necessidade de modificar as classes existentes. Além disso, a interface IFormaPagamento permite que diferentes formas de pagamento sejam utilizadas de forma uniforme em diversas partes do sistema, promovendo interoperabilidade e desacoplamento.
+
+//Benefícios das Interfaces:
+//Flexibilidade: Permitem que diferentes classes implementem a mesma interface de forma distinta.
+//Reutilização de Código: Facilitam a criação de componentes reutilizáveis em diferentes partes do sistema.
+//Interoperabilidade: Permitem que diferentes classes interajam entre si, mesmo que não sejam da mesma hierarquia de herança.
+//Manutenção Facilitada: Modificações em interfaces são propagadas para todas as classes que as implementam.
+//Desacoplamento: Reduzem a dependência entre classes, tornando o código mais modular e fácil de testar.

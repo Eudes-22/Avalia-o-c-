@@ -1,0 +1,60 @@
+//Exercicio 1.
+//Herança em Orientação a Objetos e sua Implementação em C#
+//A herança é um dos pilares da programação orientada a objetos (POO), permitindo a criação de classes que reutilizam e/ou extendem funcionalidades de classes já existentes. Essa relação hierárquica entre classes é fundamental para organizar o código de forma modular e promover a reutilização de código, facilitando o desenvolvimento e a manutenção de software.
+
+//Conceitos Básicos:
+//Classe Base: Define as características e comportamentos comuns a um conjunto de classes derivadas.
+//Classe Derivada: Herda atributos e métodos da classe base, podendo redefini-los ou adicionar novos elementos.
+//Herdança Simples: Uma classe derivada só pode ter uma classe base direta.
+//Herdança Múltipla: Uma classe derivada herda de várias classes base (não suportada em C#).
+//Permite que objetos de classes derivadas sejam tratados de forma uniforme, mesmo respondendo a métodos de forma distinta.
+// em C#:
+// herança em C# é definida utilizando a palavra-chave class, seguida do nome da classe derivada, do operador : e do nome da classe base:
+//Exemplo:
+class ClasseDerivada : ClasseBase
+{
+    // ... membros específicos da classe derivada
+}
+Use o código com cuidado.
+content_copy
+Exemplo:
+
+class Pessoa
+{
+    public string Nome { get; set; }
+    public int Idade { get; set; }
+
+    public void Apresentar()
+    {
+        Console.WriteLine($"Olá, meu nome é {Nome} e tenho {Idade} anos.");
+    }
+}
+
+class Funcionario : Pessoa
+{
+    public string Cargo { get; set; }
+    public double Salario { get; set; }
+
+    public void AumentarSalario(double porcentagem)
+    {
+        Salario *= (1 + porcentagem / 100);
+    }
+}
+
+//Nesse exemplo, a classe Funcionario herda da classe Pessoa, reutilizando seus atributos (Nome e Idade) e métodos (Apresentar()). Além disso, a classe Funcionario possui atributos e métodos específicos (Cargo e Salario, AumentarSalario()), estendendo a funcionalidade da classe base.
+
+//Exemplo Prático: Sistema de Gerenciamento de Funcionários
+//Em um sistema de gerenciamento de funcionários, a herança pode ser utilizada para modelar diferentes tipos de funcionários com características e comportamentos em comum.
+
+//Classe Base Funcionario: Define atributos e métodos comuns a todos os funcionários, como Nome, Idade, Cargo, Salario, CalcularSalario(), TirarFerias(), etc.
+//Classes Derivadas:
+//FuncionarioCLT: Herda da classe Funcionario e possui atributos e métodos específicos, como DataAdmissao, DataDemissao, ValeTransporte, etc.
+// Herda da classe Funcionario e possui atributos e métodos específicos, como PercentualComissao, VendasRealizadas, etc.
+//Ao utilizar herança, o código fica mais organizado e reutilizável, facilitando a adição de novos tipos de funcionários no futuro. Além disso, o polimorfismo permite que diferentes tipos de funcionários sejam tratados de forma uniforme em diversas operações do sistema.
+
+//Benefícios da Herança:
+
+//Reutilização de Código: Reduz a duplicação de código, tornando o desenvolvimento mais eficiente.
+//Organização do Código: Promove uma estrutura hierárquica clara e intuitiva.
+//Manutenção Facilitada: Modificações em classes base são automaticamente propagadas para as classes derivadas.
+//Extensibilidade: Permite a criação de novas classes com base em funcionalidades existentes.
